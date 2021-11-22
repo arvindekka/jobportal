@@ -1,0 +1,516 @@
+{
+	"info": {
+		"_postman_id": "7fa60e01-6e63-48da-9baf-00c0397d6800",
+		"name": "JobPortal",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "authenticate User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\":13,\r\n    \"password\":\"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8123/authenticateCandidate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8123",
+					"path": [
+						"authenticateCandidate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout Candidate User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\":13,\r\n    \"password\":\"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8123/authenticateCandidate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8123",
+					"path": [
+						"authenticateCandidate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "upload resume",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/91893/OneDrive/Pictures/BCA/BCA.pdf"
+						},
+						{
+							"key": "id",
+							"value": "201",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8123/candidate/uploadResume",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8123",
+					"path": [
+						"candidate",
+						"uploadResume"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "download resume",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8123/candidate/downloadResume?id=201",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8123",
+					"path": [
+						"candidate",
+						"downloadResume"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "201"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Profile Update",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"location\": \"Bhopal\",\r\n    \"currentWorkingOrg\":\"Oracle\",\r\n    \"role\":\"Java Developer\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8123/candidate/13/profile/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8123",
+					"path": [
+						"candidate",
+						"13",
+						"profile",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Profile get",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"location\": \"Bhopal\",\r\n    \"currentWorkingOrg\":\"Oracle\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8123/candidateProfile/13",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8123",
+					"path": [
+						"candidateProfile",
+						"13"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Candidate create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \r\n    \"name\": \"arvind\",\r\n    \"email\": \"arvind2345gmail.com\",\r\n    \"password\": \"password123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8123/candidate/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8123",
+					"path": [
+						"candidate",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Recruiter create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \r\n    \"name\": \"arvind\",\r\n    \"email\": \"arvind234511gmail.com\",\r\n    \"password\": \"password123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8123/recruiter/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8123",
+					"path": [
+						"recruiter",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "authenticate Recruiter",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\":13,\r\n    \"password\":\"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8123/authenticateCandidate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8123",
+					"path": [
+						"authenticateCandidate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Recruiter Profile Update",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"companyName\": \"oracled\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8123/recruiter/1/profile/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8123",
+					"path": [
+						"recruiter",
+						"1",
+						"profile",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Job Posting 1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     \"designation\":\"Python Developer\",\r\n     \"hiringCompanyName\":\"Oracle\", \r\n     \"minSalaryPerYear\":1500000, \r\n     \"maxSalaryPerYear\":2000000,\r\n     \"currency\":\"INR\", \r\n     \"jobPostingDate\":\"2222-03-23\",\r\n     \"jobStatus\":null,\r\n     \"jobDescription\":\"This is small jobDescription\",\r\n     \"recruiter\":{\r\n         \"id\":18\r\n     }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8123/jobPosting",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8123",
+					"path": [
+						"jobPosting"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Job Posting 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     \"designation\":\"Java Developer\",\r\n     \"hiringCompanyName\":\"IBM\", \r\n     \"minSalaryPerYear\":2500000, \r\n     \"maxSalaryPerYear\":3000000,\r\n     \"currency\":\"INR\", \r\n     \"jobPostingDate\":\"2222-03-23\",\r\n     \"jobStatus\":null,\r\n     \"jobDescription\":\"About Java\",\r\n     \"recruiter\":{\r\n         \"id\":17\r\n     }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8123/jobPosting",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8123",
+					"path": [
+						"jobPosting"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Job Posting 2 Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     \"designation\":\"C Developer\",\r\n     \"hiringCompanyName\":\"Microsoft\", \r\n     \"minSalaryPerYear\":200000, \r\n     \"maxSalaryPerYear\":300000,\r\n     \"currency\":\"INR\", \r\n     \"jobPostingDate\":\"2222-03-23\",\r\n     \"jobStatus\":null,\r\n     \"jobDescription\":\"About Java\",\r\n     \"recruiter\":{\r\n         \"id\":17\r\n     }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8123/jobPosting",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8123",
+					"path": [
+						"jobPosting"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Job Posting 2 Copy 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     \"designation\":\"Tester\",\r\n     \"hiringCompanyName\":\"IBM\", \r\n     \"minSalaryPerYear\":100000, \r\n     \"maxSalaryPerYear\":200000,\r\n     \"currency\":\"INR\", \r\n     \"jobPostingDate\":\"2222-03-23\",\r\n     \"jobStatus\":null,\r\n     \"jobDescription\":\"About Java\",\r\n     \"recruiter\":{\r\n         \"id\":17\r\n     }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8123/jobPosting",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8123",
+					"path": [
+						"jobPosting"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Candidate Get All",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"companyName\": \"oracled\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8123/recruiter/1/profile/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8123",
+					"path": [
+						"recruiter",
+						"1",
+						"profile",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "applyForJob",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     \"designation\":\"Java Developer\",\r\n     \"hiringCompanyName\":\"Oracle\", \r\n     \"minSalaryPerYear\":1500000, \r\n     \"maxSalaryPerYear\":2000000,\r\n     \"currency\":\"INR\", \r\n     \"jobPostingDate\":\"2222-03-23\",\r\n     \"jobStatus\":null,\r\n     \"jobDescription\":\"This is small jobDescription\",\r\n     \"recruiter\":{\r\n         \"id\":1\r\n     }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8123/getAllJobs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8123",
+					"path": [
+						"getAllJobs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get one Candidate",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8123/candidate/13",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8123",
+					"path": [
+						"candidate",
+						"13"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,72 @@
+<div>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+    <div>
+        <div style=" 
+        
+        background-color: white;
+        box-shadow: 5px 10px 18px #888888;
+        
+        /* background-color :#20bf55; */
+        /* background-image :linear-gradient(315deg, #20bf55 0%, #01baef 74%); */
+
+
+         height: 70px; width: 100%; position: fixed;z-index:1">
+
+                <div style="display: grid; grid-template-columns: auto auto;">
+                    <div>
+                        <img src="../assets/Picture1.png" style="height: 50px; width: 50px; padding:10px"/>
+
+                        <img src="../assets/Job-Now-signature.svg" style="padding:10px"/>
+                    </div>
+                    <div>
+                        <div *ngIf="currentUser.loggedIn">
+                            <!-- <button (click)="logoutCandidate()" style="float: right; padding:3px ; margin:10px">Logout</button> -->
+                            <button (click)="logoutCandidate()" class="btn btn-danger navbar-btn" style="float: right; padding:3px ; margin:10px">Logout</button>
+
+                            <p style="float: right; color:aliceblue; padding: 10px;">Welcome {{currentUser.name}}</p>
+                        </div>
+
+                        <div *ngIf="currentRecruiter.loggedIn">
+                            <!-- <button (click)="logoutRecruiter()" style="float: right; padding:3px ; margin:10px">Logout</button> -->
+                            <button (click)="logoutRecruiter()" class="btn btn-danger navbar-btn" style="float: right; padding:3px ; margin:10px">Logout</button>
+
+                            <p style="float: right; color:aliceblue; padding: 10px;">Welcome {{currentRecruiter.name}}</p>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        
+        <div >
+            <!-- <div *ngIf="!currentUser.loggedIn; else showHomeScreen"> -->
+            <div *ngIf="!(currentUser.loggedIn || currentRecruiter.loggedIn)">
+                <app-login 
+                (currentCandidateEmitter)="getCurrentCandidateInAppComp($event)" 
+                (currentRecruiterEmitter)="getCurrentRecruiterInAppComp($event)" 
+
+                (isCandidateLoggedIdEmitter)="checkIfCandidateLoggedInInAppComp($event)"></app-login>
+            </div>
+            <div  *ngIf="currentUser.loggedIn && isCandidateLoggedIn">
+                    <app-home-candidate [currentUser]="currentUser"></app-home-candidate>
+            </div>
+          
+        </div>
+    </div>
+</div>
+
+<!-- Home Recruiter--> -->
+<div style="width: 100%;">
+
+    <div *ngIf="currentRecruiter.loggedIn && !isCandidateLoggedIn">
+        <app-home-recruiter [currentRecruiterInHomeRecruiterComponent]="currentRecruiter"></app-home-recruiter>
+    </div>
+
+</div>
+
+
+    <!-- <app-suggestion></app-suggestion> -->
+    <router-outlet></router-outlet>

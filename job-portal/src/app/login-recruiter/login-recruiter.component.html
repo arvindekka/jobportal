@@ -1,0 +1,66 @@
+<div style = "border: 3px white solid; padding: 30px; margin-right: 150px; margin-top: 20%;
+ border-radius: 5px; color:antiquewhite;
+ 
+ /* background-color: #2a2a72;
+background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%); */
+/* 
+background-color: #bf3a30;
+background-image: linear-gradient(315deg, #bf3a30 0%, #864ba2 74%); */
+
+/* background-color: #bf033b;
+background-image: linear-gradient(315deg, #bf033b 0%, #ffc719 74%); */
+
+/* background-image: url(../../assets/27620.png); */
+box-shadow: 5px 10px 18px #888888;
+
+background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
+
+ ">
+<h1 style="color:white">Hire developer</h1>
+<form #userlogin = "ngForm" (ngSubmit) = "onClickSubmit(userlogin.value)" >
+
+   <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label> <mat-icon> mail_outline</mat-icon>  Email Id</mat-label>
+      <input matInput placeholder="Email Id" value="" ngModel name="emailid">
+   </mat-form-field>
+   <br/>
+   <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label> <mat-icon>lock</mat-icon> Password</mat-label>
+      <input matInput type="password" placeholder="Email Id" value="" ngModel name="passwd">
+   </mat-form-field>
+
+    <!-- <input mat-raised-button color="primary" type = "submit" value = "submit"> -->
+    <br/>
+    <button mat-raised-button color="secondary"> <mat-icon>keyboard_return</mat-icon>Login</button>
+    <button mat-raised-button color="secondary"><mat-icon>filter_drama</mat-icon> Sign Up</button>
+
+
+ </form>
+
+ <div style="height: 5px">
+</div>
+
+   <div *ngIf="this.isLoading">
+      Please wait, Authenticating...
+      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+   </div>
+
+
+ <div *ngIf="loginErrorMsg" style="margin:0px; border:0px white solid; padding:0px;">
+
+      
+      {{loginErrorMsg}}
+      <mat-icon style="margin-top: 1px;">error</mat-icon>
+ </div>
+
+ <div>
+
+    <!-- {{currentUser.email}} -->
+
+    
+
+
+
+     </div>
+
+     </div>

@@ -1,0 +1,42 @@
+<div style = "border: 0px green solid; ">
+    <div style="display: grid; grid-template-columns: auto auto;">
+        <div style="padding-top: 10px;display: grid; grid-template-rows: auto auto; text-align: center;
+        padding: 30px; margin: 20px">
+            
+            <div>
+                <!-- <img src="../../assets/people_young_asian_woman_sitting_laptop.png" 
+                class="img1" alt="cinque terre" style="width:200px;"/> -->
+            </div>  
+        
+            <div style="padding-top: 25%;">
+                <button mat-raised-button color="primary" (click)="showCandidateLogin()"
+                style="
+                /* background-color: #7f53ac;background-image: linear-gradient(315deg, #7f53ac 0%, #647dee 74%); */
+                background-color: #f9484a;
+background-image: linear-gradient(315deg, #f9484a 0%, #fbd72b 74%);
+                " > Apply for job</button>
+                <button  mat-raised-button color="secondary" (click)="showRecruiterLogin()"
+                style="
+                /* background-color: #36096d; */
+                /* background-image: linear-gradient(315deg, #36096d 0%, #37d5d6 74%); */
+                
+                background-color: #a40606;
+background-image: linear-gradient(315deg, #a40606 0%, #d98324 74%);
+
+                
+                
+                "
+                > Hire!</button>
+            </div>  
+        </div>
+
+        <div>
+            <div *ngIf="toggleLogin" [@flyInOut]="animate">
+                <app-login-candidate (currentCandidateEmitter)="getCurrentCandidate($event)" ></app-login-candidate>
+            </div>
+            <div *ngIf="!toggleLogin" [@flyInOut]="animate">
+                <app-login-recruiter (currentRecruiterEmitter)="getCurrentRecruiter($event)"></app-login-recruiter>
+            </div>
+        </div>
+    </div>
+</div>
